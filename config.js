@@ -45,13 +45,13 @@ window.EVENTO = {
   /* ---------- Videos (ID de YouTube) ---------- */
   videos: {
     mark:   { id: "TfxnF_N2C_M", titulo: "Mark Aanderud Trio · El Circo", lugar: "En vivo en el Milano Jazz Club, Barcelona" },
-    andres: { id: "DHFw2zsadmo", titulo: "Andrés Prado Trío · Tango Andrés", lugar: "En vivo en La Azotea, Lima" }
+    andres: { id: "DHFw2zsadmo", titulo: "Andrés Prado · Tango Andrés", lugar: "En vivo en La Azotea, Lima" }
   },
 
   /* ---------- Spotify ---------- */
   spotify: {
     mark:   { tipo: "artist", id: "3f4dSC5nm7yCMiO4lPUHud", titulo: "Mark Aanderud", sub: "Discografía en Spotify" },
-    andres: { tipo: "album",  id: "1ErpN9y0LjlQlZvoKDaAGR", titulo: "Barranquino", sub: "Andrés Prado Trío · Álbum" }
+    andres: { tipo: "album",  id: "1ErpN9y0LjlQlZvoKDaAGR", titulo: "Barranquino", sub: "Andrés Prado · Álbum" }
   },
 
   /* Prueba la página en otra fecha con ?fecha=2026-12-06 (ponlo en false al publicar) */

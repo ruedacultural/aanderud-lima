@@ -1,6 +1,6 @@
 # Barcelona – Lima Jazz Connection · Mark Aanderud en Lima
 
-Página informativa del concierto de **Mark Aanderud con Andrés Prado Trío** · Cocodrilo Verde · sábado 5 de diciembre de 2026, 8:00 a 10:00 p. m. (primer turno).
+Página informativa del concierto de **Mark Aanderud con Andrés Prado, Hugo Alcázar y Mario Cuba** · Cocodrilo Verde · sábado 5 de diciembre de 2026, 8:00 a 10:00 p. m. (primer turno).
 Una producción de Rueda Cultural, con el apoyo de Music Market. Se publica en GitHub Pages: `https://ruedacultural.github.io/aanderud-lima/`
 
 Basada en la página de Tornada, pero más simple: **sin formulario de Airtable y sin píxel de Meta**. La única forma de reservar es el botón de WhatsApp.
