@@ -1,0 +1,333 @@
+/* =====================================================================
+   BARCELONA – LIMA JAZZ CONNECTION · Estilos
+   Sistema de marca (Manual de identidad de Rueda Cultural, 2026):
+   - Rueda aporta la estructura y la firma: League Spartan (rótulos),
+     Manrope (textos), el carmín #B51B35 y el pie en vino #661315 con su isologo.
+   - El proyecto conserva su universo: el afiche en blanco y negro,
+     el serif condensado en cursiva y las líneas horizontales finas.
+   ===================================================================== */
+
+:root{
+  /* Universo del afiche */
+  --negro: #0E0D0F;
+  --negro-2: #19171B;
+  --grafito: #2A272D;
+  --hueso: #F2EEE8;
+  --hueso-2: #E6E0D7;
+  --gris: #A39E98;
+  --gris-osc: #6E6963;
+  --linea: rgba(242,238,232,.22);
+
+  /* Rueda Cultural */
+  --vino: #661315;
+  --carmin: #B51B35;
+
+  --wa: #1F8F57;
+
+  --f-serif: 'Instrument Serif', 'Times New Roman', serif;
+  --f-titulo: 'League Spartan', 'Manrope', sans-serif;
+  --f-texto: 'Manrope', system-ui, sans-serif;
+
+  --radio: 12px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } }
+
+body{
+  margin: 0;
+  background: var(--negro);
+  color: var(--hueso);
+  font-family: var(--f-texto);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding-bottom: 76px; /* espacio para la barra fija */
+}
+img{ max-width: 100%; display: block; }
+a{ color: inherit; }
+p{ margin: 0 0 14px; }
+h1,h2,h3,h4{ margin: 0; line-height: 1.05; font-weight: 400; }
+figure{ margin: 0; }
+
+.oculto{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+[hidden]{ display: none !important; }
+
+.wrap{ max-width: 1000px; margin: 0 auto; padding: 0 22px; }
+
+.kicker{
+  font-family: var(--f-titulo); font-weight: 700; font-size: .78rem;
+  letter-spacing: .28em; text-transform: uppercase; color: var(--gris);
+  margin-bottom: 14px; display: flex; align-items: center; gap: 12px;
+}
+.kicker::before{ content:""; width: 26px; height: 3px; background: var(--carmin); border-radius: 2px; }
+
+.titulo-serif{
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: clamp(2.6rem, 10vw, 4.2rem); letter-spacing: -.01em; line-height: .98;
+  margin-bottom: 26px;
+}
+.titulo-serif em{ font-style: normal; color: var(--gris); }
+
+/* ---------- Botones ---------- */
+.btn{
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--f-texto); font-weight: 700; font-size: 1rem;
+  text-decoration: none; border: 0; cursor: pointer;
+  padding: 15px 28px; border-radius: 999px;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.btn:active{ transform: translateY(1px); }
+.btn svg{ width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+.btn--reserva{ background: var(--hueso); color: var(--negro); }
+.btn--reserva svg{ fill: var(--wa); }
+.btn--reserva:hover{ background: #fff; }
+.btn--reserva.agotado{ background: var(--grafito); color: var(--gris); pointer-events: none; }
+.btn--reserva.agotado svg{ display: none; }
+.btn--grande{ font-size: 1.1rem; padding: 18px 34px; }
+.btn--chico{ padding: 11px 18px; font-size: .95rem; }
+.btn--contorno{ background: transparent; color: var(--hueso); border: 1.5px solid var(--linea); padding: 12px 24px; }
+.btn--contorno:hover{ background: var(--hueso); color: var(--negro); }
+:focus-visible{ outline: 3px solid var(--carmin); outline-offset: 3px; }
+
+.micro{ font-size: .86rem; color: var(--gris); margin: 12px 0 0; }
+
+/* =====================================================================
+   1. PORTADA (recrea el afiche)
+   ===================================================================== */
+.hero{
+  position: relative; overflow: hidden;
+  background: radial-gradient(70% 55% at 50% 26%, #2E2C30 0%, #1A191C 58%, var(--negro) 100%);
+  padding-top: 18px;
+}
+.hero__marcas{
+  position: relative; z-index: 3;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 20px; max-width: 1000px; margin: 0 auto;
+}
+.hero__marcas img{ width: 104px; height: auto; }
+.hero__marcas .hero__rueda{ width: 60px; }
+@media (min-width: 760px){ .hero__marcas img{ width: 130px; } .hero__marcas .hero__rueda{ width: 78px; } }
+
+.hero__foto{ display: block; max-width: 720px; margin: -28px auto 0; }
+.hero__foto img{
+  width: 100%; height: auto;
+  -webkit-mask-image: radial-gradient(ellipse 54% 64% at 50% 40%, #000 50%, transparent 100%);
+          mask-image: radial-gradient(ellipse 54% 64% at 50% 40%, #000 50%, transparent 100%);
+}
+
+.hero__texto{
+  position: relative; z-index: 2;
+  margin: -27vw auto 0; padding: 0 20px 40px; max-width: 1000px;
+}
+@media (min-width: 760px){ .hero__texto{ margin-top: -190px; padding-bottom: 56px; } }
+
+.hero__presenta{
+  font-family: var(--f-titulo); font-weight: 700; font-size: .78rem; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--hueso-2); margin: 0 0 6px;
+}
+.hero__titulo{ width: 100%; max-width: 900px; height: auto; }
+.hero__nombres{ width: 86%; max-width: 760px; height: auto; margin: 14px 0 10px; }
+.hero__fecha{
+  font-family: var(--f-titulo); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(1.02rem, 4.4vw, 1.75rem); letter-spacing: .01em; line-height: 1.15;
+  margin: 0 0 4px;
+}
+.hero__banda{ color: var(--hueso-2); font-size: clamp(.9rem, 3.4vw, 1.1rem); margin: 0; }
+
+.hero__accion{
+  margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--linea);
+}
+.hero__accion .btn{ width: 100%; max-width: 380px; }
+.hero__sala{ width: 150px; height: auto; margin-top: 28px; opacity: .92; }
+@media (min-width: 760px){
+  .hero__accion{ display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+  .hero__accion .micro{ margin: 0; }
+  .hero__accion .btn{ width: auto; }
+  .hero__sala{ position: absolute; right: 20px; bottom: 56px; width: 190px; margin: 0; }
+}
+
+/* =====================================================================
+   SECCIONES
+   ===================================================================== */
+.seccion{ padding: 68px 0; position: relative; border-top: 1px solid var(--linea); }
+.seccion--alt{ background: var(--hueso); color: var(--negro); border-top: 0; }
+.seccion--alt .kicker{ color: var(--gris-osc); }
+.seccion--alt .titulo-serif em{ color: var(--gris-osc); }
+.seccion--mark{ background: var(--negro-2); }
+.seccion--video{ background: linear-gradient(180deg, var(--negro) 0%, var(--negro-2) 100%); }
+
+.cuerpo{ max-width: 60ch; font-size: 1.05rem; color: var(--hueso-2); }
+.destacado{
+  font-family: var(--f-serif); font-size: clamp(1.45rem, 5vw, 1.8rem); line-height: 1.25;
+  color: #fff; border-left: 3px solid var(--carmin); padding-left: 18px; margin-bottom: 18px;
+}
+.dos-col{ display: grid; gap: 28px; align-items: center; }
+@media (min-width: 820px){ .dos-col{ grid-template-columns: 1.15fr 1fr; gap: 40px; } }
+.foto-bn img{ width: 100%; height: auto; border-radius: 4px; filter: grayscale(1); }
+.foto-bn figcaption, .mark__foto figcaption{ font-size: .75rem; color: var(--gris); margin-top: 8px; letter-spacing: .02em; }
+
+.ficha{
+  margin: 34px 0 0; display: grid; gap: 0; max-width: 620px;
+  border-top: 1px solid var(--linea);
+}
+.ficha div{ display: grid; grid-template-columns: 72px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--linea); }
+.ficha dt{ font-family: var(--f-titulo); font-weight: 700; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gris); padding-top: 4px; }
+.ficha dd{ margin: 0; font-weight: 700; }
+
+/* ---------- 3. Mark ---------- */
+.mark{ display: grid; gap: 26px; }
+@media (min-width: 860px){ .mark{ grid-template-columns: 1fr 1.05fr; gap: 44px; align-items: start; } }
+.mark__foto img{ width: 100%; height: auto; border-radius: 4px; }
+.mark__texto .titulo-serif{ margin-bottom: 6px; font-size: clamp(3rem, 12vw, 4.8rem); }
+.mark__rol{ font-family: var(--f-titulo); font-weight: 700; font-size: .8rem; letter-spacing: .24em; text-transform: uppercase; color: var(--gris); margin-bottom: 20px; }
+.mark__texto p{ color: var(--hueso-2); }
+.mark__texto b{ color: #fff; }
+
+.cifras{
+  list-style: none; padding: 0; margin: 40px 0 0;
+  display: grid; gap: 0; border-top: 1px solid var(--linea);
+}
+@media (min-width: 720px){ .cifras{ grid-template-columns: repeat(2, 1fr); } }
+.cifras li{ padding: 18px 0; border-bottom: 1px solid var(--linea); display: flex; align-items: baseline; gap: 16px; }
+@media (min-width: 720px){ .cifras li{ flex-direction: column; gap: 4px; padding: 22px 22px 22px 0; } }
+.cifras b{ font-family: var(--f-serif); font-weight: 400; font-size: 3.2rem; line-height: 1; color: #fff; min-width: 92px; }
+.cifras span{ color: var(--gris); font-size: .92rem; line-height: 1.4; }
+.fuente{ font-size: .75rem; color: var(--gris-osc); margin: 10px 0 26px; }
+
+.enlaces-artista{ display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.enlace{ display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: .9rem; color: var(--hueso); text-decoration: none; }
+.enlace:hover{ text-decoration: underline; }
+.enlace svg{ width: 17px; height: 17px; fill: currentColor; }
+
+/* ---------- 4. Videos y Spotify ---------- */
+.videos{ display: grid; gap: 22px; }
+@media (min-width: 760px){ .videos{ grid-template-columns: 1fr 1fr; } }
+.video figcaption{ margin-top: 10px; font-size: .9rem; color: var(--gris); line-height: 1.4; }
+.video figcaption b{ display: block; color: var(--hueso); font-weight: 700; font-size: 1rem; }
+.yt{
+  position: relative; display: block; width: 100%; aspect-ratio: 16/9; padding: 0; border: 0; cursor: pointer;
+  border-radius: 8px; overflow: hidden; background: var(--grafito);
+}
+.yt img{ width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: opacity .2s ease; }
+.yt:hover img{ opacity: 1; }
+.yt__play{
+  position: absolute; left: 50%; top: 50%; width: 66px; height: 66px; margin: -33px 0 0 -33px;
+  border-radius: 50%; background: var(--hueso); box-shadow: 0 6px 20px rgba(0,0,0,.45);
+}
+.yt__play::after{ content: ""; position: absolute; left: 26px; top: 20px; border-left: 19px solid var(--negro); border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+.yt iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.spotifys{ display: grid; gap: 14px; margin-top: 30px; }
+@media (min-width: 760px){ .spotifys{ grid-template-columns: 1fr 1fr; } }
+.spotify{ width: 100%; min-height: 152px; border-radius: 12px; overflow: hidden; background: var(--grafito); }
+.spotify iframe{ display: block; width: 100%; height: 152px; border: 0; }
+.spotify__btn{
+  width: 100%; min-height: 152px; display: flex; align-items: center; gap: 18px; padding: 20px 22px;
+  border: 0; cursor: pointer; text-align: left; color: #fff; font-family: var(--f-texto); font-size: 1.02rem;
+  background: linear-gradient(120deg, #232025 0%, #2E2B31 100%);
+}
+.spotify__btn small{ color: var(--gris); font-size: .86rem; }
+.spotify__play{ position: relative; flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: #1DB954; }
+.spotify__play::after{ content: ""; position: absolute; left: 22px; top: 17px; border-left: 17px solid #0b0b0b; border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
+
+/* ---------- 5. La banda ---------- */
+.artistas{ list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+@media (min-width: 860px){
+  .artistas{ grid-template-columns: 1.6fr 1fr; }
+  .artistas .artista:first-child{ grid-row: span 2; }
+}
+.artista{ display: flex; gap: 16px; background: var(--negro-2); border: 1px solid var(--linea); border-radius: var(--radio); padding: 20px; }
+.artista h3{ font-family: var(--f-serif); font-size: 1.9rem; margin-bottom: 8px; }
+.artista h3 small{ display: block; font-family: var(--f-titulo); font-weight: 700; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gris); margin-top: 4px; }
+.artista p{ font-size: .95rem; color: var(--hueso-2); margin: 0 0 12px; }
+.artista__inicial{
+  flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%;
+  display: grid; place-items: center; font-family: var(--f-serif); font-style: italic; font-size: 1.7rem;
+  background: var(--hueso); color: var(--negro);
+}
+.artista:nth-child(n+2) .artista__inicial{ background: var(--grafito); color: var(--hueso); }
+
+/* ---------- 6. Entradas ---------- */
+.precios{ display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 640px){ .precios{ grid-template-columns: repeat(3, 1fr); } }
+.precio{
+  background: #fff; border: 1px solid #D8D1C6; border-radius: var(--radio);
+  padding: 20px 20px 18px;
+}
+.precio__nombre{ font-family: var(--f-titulo); font-weight: 700; font-size: .85rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gris-osc); }
+.precio__monto{ font-family: var(--f-serif); font-size: 3.4rem; line-height: 1; margin: 8px 0 6px; color: var(--negro); }
+.precio__monto small{ font-family: var(--f-texto); font-size: 1rem; font-weight: 700; margin-right: 4px; vertical-align: 1.2em; }
+.precio__nota{ font-size: .88rem; color: var(--gris-osc); margin: 0; }
+.precio:first-child{ background: var(--negro); border-color: var(--negro); }
+.precio:first-child .precio__monto{ color: var(--hueso); }
+.precio:first-child .precio__nombre, .precio:first-child .precio__nota{ color: var(--gris); }
+
+.aviso{ background: var(--negro); color: var(--hueso); border-radius: var(--radio); padding: 22px; margin: 22px 0 0; font-size: 1.05rem; }
+
+.pasos{ list-style: none; counter-reset: paso; padding: 0; margin: 30px 0 0; display: grid; gap: 12px; }
+@media (min-width: 820px){ .pasos{ grid-template-columns: repeat(3, 1fr); } }
+.pasos li{
+  counter-increment: paso; position: relative;
+  border-top: 2px solid var(--negro); padding: 16px 4px 4px 0;
+}
+.pasos li::before{
+  content: counter(paso, decimal-leading-zero); display: block;
+  font-family: var(--f-titulo); font-weight: 800; font-size: .85rem; letter-spacing: .1em; color: var(--carmin); margin-bottom: 6px;
+}
+.pasos h3{ font-family: var(--f-titulo); font-weight: 700; font-size: 1.12rem; margin-bottom: 6px; }
+.pasos p{ font-size: .95rem; color: #4A4641; margin: 0; }
+
+.reserva{ margin-top: 34px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.reserva .btn--reserva{ background: var(--negro); color: var(--hueso); }
+.reserva .btn--reserva:hover{ background: #000; }
+.reserva .btn--reserva svg{ fill: #3FD38A; }
+.reserva__num{ margin: 0; color: #4A4641; }
+.reserva__num b{ color: var(--negro); white-space: nowrap; }
+@media (max-width: 520px){ .reserva .btn{ width: 100%; } }
+
+/* ---------- 7. Cómo llegar ---------- */
+.info{ display: grid; gap: 14px; }
+@media (min-width: 760px){ .info{ grid-template-columns: 1fr 1fr; } }
+.info__bloque{ background: var(--negro-2); border: 1px solid var(--linea); border-radius: var(--radio); padding: 22px; }
+.info__bloque h3{ font-family: var(--f-titulo); font-weight: 700; font-size: .85rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gris); margin-bottom: 12px; }
+.info__bloque p{ color: var(--hueso-2); }
+.info__bloque b{ color: #fff; }
+.info__nota{ font-size: .9rem; margin: 14px 0 0; }
+.horario{ list-style: none; padding: 0; margin: 0; }
+.horario li{ display: flex; gap: 14px; padding: 8px 0; border-bottom: 1px solid var(--linea); color: var(--hueso-2); }
+.horario li:last-child{ border-bottom: 0; }
+.horario span{ min-width: 84px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
+
+/* =====================================================================
+   PIE — firma Rueda Cultural (vino institucional + isologo en blanco)
+   ===================================================================== */
+.pie{ position: relative; background: var(--vino); color: #F0DCDC; padding: 52px 0 28px; overflow: hidden; }
+.pie__recorrido{ position: absolute; top: 0; left: 0; width: 100%; height: 46px; opacity: .9; }
+.pie__grid{ display: flex; flex-wrap: wrap; align-items: center; gap: 22px 30px; }
+.pie__logo img{ width: 104px; height: auto; }
+.pie__produce{ margin: 0 0 2px; font-size: .95rem; }
+.pie__produce b{ font-family: var(--f-titulo); font-weight: 800; color: #fff; letter-spacing: .04em; text-transform: uppercase; }
+.pie__lema{ font-family: var(--f-titulo); font-weight: 600; font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: #D9AFAF; margin-bottom: 12px; }
+.pie__enlaces{ list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pie__enlaces a{ display: inline-flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-weight: 600; font-size: .95rem; word-break: break-all; }
+.pie__enlaces a:hover{ text-decoration: underline; }
+.pie__enlaces svg{ width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+.pie__apoyo p{ font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: #D9AFAF; margin: 0 0 8px; }
+.pie__apoyo img{ width: 120px; height: auto; }
+@media (min-width: 860px){ .pie__apoyo{ margin-left: auto; } }
+.pie__creditos{ margin-top: 30px; font-size: .75rem; color: #D9AFAF; }
+
+/* ---------- Barra fija ---------- */
+.barra{
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(14,13,15,.95); color: #fff; border-top: 1px solid var(--linea);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  transition: transform .25s ease, opacity .25s ease;
+}
+.barra.oculta{ transform: translateY(110%); opacity: 0; pointer-events: none; }
+.barra__info{ line-height: 1.25; font-size: .82rem; color: var(--gris); min-width: 0; }
+.barra__info b{ display: block; color: #fff; font-size: 1rem; }
+@media (min-width: 900px){ body{ padding-bottom: 0; } .barra{ display: none; } }
