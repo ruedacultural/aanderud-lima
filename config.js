@@ -17,8 +17,7 @@ window.EVENTO = {
   /* ---------- Precios (se muestran tal cual) ---------- */
   precios: [
     { nombre: "General",        monto: 50, nota: "Por persona" },
-    { nombre: "Estudiante",     monto: 40, nota: "Presentando carné vigente" },
-    { nombre: "Consumo mínimo", monto: 50, nota: "En el local, además de la entrada" }
+    { nombre: "Estudiante",     monto: 40, nota: "Presentando carné vigente" }
   ],
 
   /* Ponlo en true si se llenan las reservas: cambia los botones por "Agotado" */

@@ -250,7 +250,7 @@ figure{ margin: 0; }
 
 /* ---------- 6. Entradas ---------- */
 .precios{ display: grid; gap: 12px; grid-template-columns: 1fr; }
-@media (min-width: 640px){ .precios{ grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 640px){ .precios{ grid-template-columns: repeat(2, 1fr); max-width: 680px; } }
 .precio{
   background: #fff; border: 1px solid #D8D1C6; border-radius: var(--radio);
   padding: 20px 20px 18px;
