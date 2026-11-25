@@ -188,7 +188,7 @@ figure{ margin: 0; }
   list-style: none; padding: 0; margin: 40px 0 0;
   display: grid; gap: 0; border-top: 1px solid var(--linea);
 }
-@media (min-width: 720px){ .cifras{ grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 720px){ .cifras{ grid-template-columns: repeat(3, 1fr); } }
 .cifras li{ padding: 18px 0; border-bottom: 1px solid var(--linea); display: flex; align-items: baseline; gap: 16px; }
 @media (min-width: 720px){ .cifras li{ flex-direction: column; gap: 4px; padding: 22px 22px 22px 0; } }
 .cifras b{ font-family: var(--f-serif); font-weight: 400; font-size: 3.2rem; line-height: 1; color: #fff; min-width: 92px; }
