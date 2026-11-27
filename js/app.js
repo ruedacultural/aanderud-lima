@@ -41,8 +41,12 @@
   }
 
   /* ---------- WhatsApp ---------- */
+  function promoActiva() {
+    return C.promo && C.promo.hasta && ahora() < new Date(C.promo.hasta) && estado() === 'abierto';
+  }
+
   function urlWhatsApp(ref) {
-    var msg = C.whatsapp.mensaje;
+    var msg = promoActiva() ? C.promo.mensaje : C.whatsapp.mensaje;
     if (C.whatsapp.agregarReferencia && ref) msg += ' (de parte de ' + ref + ')';
     var num = String(C.whatsapp.numero).replace(/\D/g, '');
     return 'https://wa.me/' + num + '?text=' + encodeURIComponent(msg);
@@ -79,7 +83,13 @@
   function pintarPrecios() {
     var caja = $('#precios-lista');
     if (!caja) return;
-    caja.innerHTML = C.precios.map(function (p) {
+    var promo = promoActiva();
+    caja.innerHTML = C.precios.map(function (p, i) {
+      if (promo && i === 0) {
+        return '<div class="precio precio--promo"><p class="precio__nombre">' + p.nombre + ' · ' + C.promo.nombre + '</p>' +
+          '<p class="precio__monto"><small>S/</small>' + C.promo.precio + ' <s>S/ ' + p.monto + '</s></p>' +
+          '<p class="precio__nota">Solo hoy, hasta las 11:59 p. m.</p></div>';
+      }
       return '<div class="precio"><p class="precio__nombre">' + p.nombre + '</p>' +
         '<p class="precio__monto"><small>S/</small>' + p.monto + '</p>' +
         '<p class="precio__nota">' + p.nota + '</p></div>';
@@ -152,7 +162,28 @@
   var m = $('[data-maps]');
   if (m) m.href = C.mapsUrl;
 
+  function prepararPromo() {
+    if (!promoActiva()) return;
+    var caja = $('#promo');
+    caja.hidden = false;
+    $$('[data-promo-nombre]').forEach(function (e) { e.textContent = C.promo.nombre; });
+    $$('[data-promo-precio]').forEach(function (e) { e.textContent = C.promo.precio; });
+    var micro = $('#micro-precios');
+    if (micro) micro.innerHTML = '<b>' + C.promo.nombre + ': S/ ' + C.promo.precio + ' solo hoy</b> · Luego general S/ 50 · Estudiantes S/ 40';
+    var barra = $('.barra__info span');
+    if (barra) barra.textContent = C.promo.nombre + ' · S/ ' + C.promo.precio + ' solo hoy';
+    var fin = new Date(C.promo.hasta), out = $('#promo-cuenta');
+    function tic() {
+      var ms = fin - new Date();
+      if (ms <= 0) { location.reload(); return; }
+      var h = Math.floor(ms / 36e5), m = Math.floor(ms % 36e5 / 6e4), sg = Math.floor(ms % 6e4 / 1e3);
+      out.textContent = [h, m, sg].map(function (n) { return (n < 10 ? '0' : '') + n; }).join(':');
+    }
+    tic(); setInterval(tic, 1000);
+  }
+
   pintarPrecios();
+  prepararPromo();
   prepararReserva();
   prepararVideos();
   prepararSpotify();

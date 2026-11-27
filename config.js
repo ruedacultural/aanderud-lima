@@ -23,6 +23,14 @@ window.EVENTO = {
   /* Ponlo en true si se llenan las reservas: cambia los botones por "Agotado" */
   agotado: false,
 
+  /* ---------- Promoción temporal (se apaga sola al pasar "hasta") ---------- */
+  promo: {
+    nombre: "Black Friday",
+    precio: 35,            // reemplaza a la entrada general mientras dure
+    hasta: "2026-11-27T23:59:59-05:00",
+    mensaje: "Hola, quiero reservar con el precio Black Friday (S/ 35) para Mark Aanderud en Cocodrilo Verde (sábado 5 de diciembre, 8 p. m.). Somos ___ personas."
+  },
+
   /* ---------- WhatsApp (único canal de reserva) ---------- */
   whatsapp: {
     numero: "51983545543",   // con código de país, sin + ni espacios

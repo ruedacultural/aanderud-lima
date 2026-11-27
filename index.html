@@ -30,9 +30,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=League+Spartan:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/estilos.css?v=7">
+<link rel="stylesheet" href="css/estilos.css?v=8">
 
-<script src="config.js?v=7"></script>
+<script src="config.js?v=8"></script>
 </head>
 <body>
 
@@ -47,6 +47,12 @@
 <h1 class="oculto">Mark Aanderud en Lima. Barcelona – Lima Jazz Connection: Mark Aanderud con Andrés Prado, Hugo Alcázar y Mario Cuba, sábado 5 de diciembre de 2026, 8:00 p. m., en Cocodrilo Verde, Miraflores.</h1>
 
 <!-- ============ 1. PORTADA ============ -->
+<div class="promo" id="promo" hidden>
+  <p><b data-promo-nombre></b> · Solo hoy: entrada general a <b>S/ <span data-promo-precio></span></b> <s>S/ 50</s></p>
+  <p class="promo__tiempo">Termina en <span id="promo-cuenta">--:--:--</span></p>
+  <a href="#" data-wa target="_blank" rel="noopener">Reservar a S/ <span data-promo-precio></span></a>
+</div>
+
 <header class="hero">
   <div class="hero__marcas">
     <a href="https://www.instagram.com/musicmarketperu/" target="_blank" rel="noopener"><img src="img/logo-musicmarket.webp" width="360" height="131" alt="Music Market"></a>
@@ -72,7 +78,7 @@
       <a class="btn btn--reserva" href="#" data-wa target="_blank" rel="noopener">
         <svg aria-hidden="true"><use href="#i-wa"/></svg> <span data-txt-reserva>Reservar por WhatsApp</span>
       </a>
-      <p class="micro">General S/ 50 · Estudiantes S/ 40</p>
+      <p class="micro" id="micro-precios">General S/ 50 · Estudiantes S/ 40</p>
     </div>
 
     <img class="hero__sala" src="img/logo-cocodrilo.webp" width="500" height="145" alt="Cocodrilo Verde">
@@ -311,6 +317,6 @@
   <a class="btn btn--reserva btn--chico" href="#" data-wa target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg> <span data-txt-reserva-corto>Reservar</span></a>
 </div>
 
-<script src="js/app.js?v=7" defer></script>
+<script src="js/app.js?v=8" defer></script>
 </body>
 </html>

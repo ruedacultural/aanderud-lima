@@ -331,3 +331,18 @@ figure{ margin: 0; }
 .barra__info{ line-height: 1.25; font-size: .82rem; color: var(--gris); min-width: 0; }
 .barra__info b{ display: block; color: #fff; font-size: 1rem; }
 @media (min-width: 900px){ body{ padding-bottom: 0; } .barra{ display: none; } }
+
+/* ---------- Promoción temporal (Black Friday) ---------- */
+.promo{
+  position: sticky; top: 0; z-index: 40;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 16px;
+  padding: 10px 16px; background: var(--carmin); color: #fff; text-align: center; font-size: .95rem;
+}
+.promo p{ margin: 0; }
+.promo s{ opacity: .75; margin-left: 4px; }
+.promo__tiempo{ font-variant-numeric: tabular-nums; font-size: .85rem; opacity: .95; }
+.promo a{ background: #fff; color: var(--carmin); font-weight: 800; text-decoration: none; padding: 6px 14px; border-radius: 999px; font-size: .88rem; white-space: nowrap; }
+.precio--promo{ background: var(--carmin) !important; border-color: var(--carmin) !important; }
+.precio--promo .precio__monto{ color: #fff !important; }
+.precio--promo .precio__monto s{ font-family: var(--f-texto); font-size: 1rem; opacity: .7; margin-left: 6px; }
+.precio--promo .precio__nombre, .precio--promo .precio__nota{ color: #FBE3E6 !important; }
